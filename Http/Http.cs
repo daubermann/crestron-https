@@ -35,8 +35,8 @@ namespace Http
             //builds up the headers
             var headers = new HttpHeaders();
 
-            var authHeader = new HttpHeader("Cache-Control", "no-cache");
-            headers.AddHeader(authHeader);
+            var cacheHeader = new HttpHeader("Cache-Control", "no-cache");
+            headers.AddHeader(cacheHeader);
 
             var customHeader = new HttpHeader("MyCustomHeader", "foo");
             headers.AddHeader(customHeader);

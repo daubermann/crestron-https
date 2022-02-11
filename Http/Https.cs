@@ -21,6 +21,8 @@ namespace Http
             _client.HostVerification = false;   //keeping things simple
             _client.PeerVerification = false;   //keeping things simple
 
+     
+
         }
 
 
@@ -38,13 +40,15 @@ namespace Http
             //builds up the headers
             var headers = new HttpsHeaders();
 
-            var authHeader = new HttpsHeader("Cache-Control", "no-cache");
-            headers.AddHeader(authHeader);
+            var cacheHeader = new HttpsHeader("Cache-Control", "no-cache");
+            headers.AddHeader(cacheHeader);
 
             var customHeader = new HttpsHeader("MyCustomHeader", "foo");
             headers.AddHeader(customHeader);
 
             request.Header = headers;
+
+            //request.KeepAlive = true;
 
             //Dispatches it!
             var response = _client.Dispatch(request);
